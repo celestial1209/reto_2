@@ -1,0 +1,49 @@
+@startuml EjercicioD
+
+object Expresion1{
+    operador_binario = /
+}
+
+
+object Expresion2{
+    operador_binario = +
+}
+
+
+object VariableVAR1{
+    var= X
+}
+
+object Expresion4{
+    -operador_binario = /
+}
+
+object VariableVAR2{
+    var= Y
+}
+
+object constante1{
+    valor= 2
+}
+object Expresion3{
+    -operador_binario = /
+}
+
+object Expresion5{
+    -operador_binario = +
+}
+
+object constante2{
+    valor= 3
+}
+Expresion1 o-- Expresion2
+Expresion2 o-- VariableVAR1
+Expresion4 o-- VariableVAR2
+Expresion4 o-- constante1
+Expresion2 o-- Expresion4
+Expresion5 o-- VariableVAR1
+Expresion5 o-- constante2
+Expresion3 o-- Expresion5
+Expresion1 o-- Expresion3
+
+@enduml

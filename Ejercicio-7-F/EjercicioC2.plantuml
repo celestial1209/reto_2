@@ -1,0 +1,25 @@
+@startuml ejercicioc2
+object T1_Poligono
+Object Punto1{
+    cord_x=0
+    cord_y=0
+}
+Object Punto2{
+    cord_x=1
+    cord_y=0
+}
+Object Punto3{
+    cord_x=0
+    cord_y=1
+}
+
+Object Punto4{
+    cord_x=1
+    cord_y=1
+}
+T1_Poligono <-- Punto1
+T1_Poligono <-- Punto2
+T1_Poligono <-- Punto3
+T1_Poligono <-- Punto4
+
+@enduml

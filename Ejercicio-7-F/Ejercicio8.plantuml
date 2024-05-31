@@ -1,0 +1,25 @@
+/' Un laboratorio tiene una diversidad de equipos, pero solamente un laboratorio nuclear
+puede tener equipos nucleares '/
+
+@startuml ejercicio8
+
+class Laboratorio {
+    - String nombre
+    - Equipo[] equipos 
+    + void agregarEquipo(Equipo varequipo)
+}
+
+class Equipo {
+    - String nombre
+    - String tipo
+    - String descripcion
+}
+
+class EquipoNuclear extends Equipo {
+}
+
+Laboratorio *--o Equipo: tiene
+
+Laboratorio *--o EquipoNuclear:  solo puede tener
+
+@enduml

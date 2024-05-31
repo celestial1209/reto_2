@@ -1,0 +1,16 @@
+@startuml ejercicio7
+
+class Caracterizacion {
+    - String criterio
+    + void caracterizar()
+}
+note left: El metodo realiza la caracterizacion a un elemento
+class ElementoClasificado {
+    - String nombre
+    - String descripcion
+    + Caracterizacion obtCaractzcion()
+}
+note left: El metodo devuelve la caracterizacion
+Caracterizacion *--o ElementoClasificado: generado a partir de
+
+@enduml

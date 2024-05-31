@@ -1,0 +1,90 @@
+@startuml ejercicioF
+class equipo{
+-nombre:string
+-registro: string
+-jugadores
+-entrenador
+}
+class jugador{
+-numero:int
+-posicion: string
+-telefono: string
+-nombre:string
+-direccion:string
+}
+class entrenador{
+-años_experiencia: int
+-telefono:string
+-nombre:string
+-direccion:string
+}
+class juego{
+-localidad:string
+-puntuacion: string
+-equipo: Equipo
+-equipo: Equipo
+}
+jugador o--* juego
+jugador o--* equipo
+entrenador o--* equipo
+
+object evento{
+nombre: "juegos panamericanos"
+fecha_inicio: "2024-10-03"
+fecha_fin: "2024-11-20"
+sede: "Santiago, Chile"
+}
+object Deporte{
+nombre: "voleyball"
+Disciplina:"deporte"
+generos: "masculino, femenino"
+}
+
+object pais{
+nombre: "Venezuela"
+continente: "America del sur"
+comite_olimpico: "Comite olimpico venezolano"
+}
+object pais1{
+nombre: "Colombia"
+continente: "america del sur"
+comite_olimpico: "Comite olimpico venezolano"
+}
+
+object atleta{
+nombre: "Luis Hernandez"
+pais:"Venezuela"
+Deporte: "voleyball"
+Genero: "Masculino"
+}
+
+object atleta1{
+nombre: "Pedro Perez"
+pais:"Colombia"
+Deporte: "voleyball"
+Genero: "Masculino"
+}
+
+object medalla{
+ID_Medalla: 1
+tipo: "Oro"
+Evento: "Juegos Panamericanos 2024"
+Atleta: "Luis Hernandez"
+}
+
+object medalla2{
+ID_Medalla: 2
+tipo: "Plata"
+Evento: "Juegos Panamericanos 2024"
+Atleta: "Pedro Perez"
+}
+
+pais o-- atleta
+pais1 o-- atleta1
+medalla -> atleta
+medalla2 -> atleta1
+evento o-- Deporte
+pais o-- evento
+pais1 o-- evento
+
+@enduml

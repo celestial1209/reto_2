@@ -1,0 +1,21 @@
+1. ¿Qué significa que el paquete “top” tanga una dependencia con el paquete “controllers”?
+La dependencia entre el paquete "top" y el paquete "controllers" indica que el paquete "top" necesita del paquete "controllers" para funcionar correctamente. Esto significa que el paquete "top" utiliza clases o interfaces  en el paquete controllers para realizar sus tareas
+
+2. ¿Con cuántos paquetes tiene dependencias el paquete “Threads”? ¿Cuántas
+dependencias son de entrada y cuántas de salida? ¿Si se hace un cambio en alguna de
+las clases del paquete “Threads” qué podría suceder?
+
+El paquete "Threads" tiene dos dependencias:
+
+Existen 6 dependencias, de entrada hay tres, con los paquetes “top”, “controllers” y “utils”, tambien existen tres dependencias de salida, también hay tres con los mismos paquetes.
+
+Los cambios en las clases de un paquete pueden tener un impacto en los paquetes que dependen de él
+
+3. Hablando en términos de modularidad, ¿este diagrama muestra un código con bajo o
+alto acoplamiento entre los paquetes? ¿Esto es bueno o malo?
+
+El diagrama de paquetes muestra un acoplamiento moderado entre los paquetes. El paquete "top" tiene una dependencia del paquete "controllers", lo que indica que existe cierta interconexión entre ellos. Sin embargo, el paquete "Threads" solo tiene dependencias de los paquetes "utils" y "Processors", lo que sugiere que está relativamente aislado de los demás paquetes.
+
+En general, un buen diseño modular busca minimizar el acoplamiento entre los paquetes para aumentar la flexibilidad y la facilidad de mantenimiento del código. Sin embargo, un acoplamiento completamente nulo puede ser difícil de lograr y, en algunos casos, puede ser contraproducente. El nivel de acoplamiento adecuado dependerá de las características específicas de la aplicación.
+
+Existe un alto acoplamiento todos los paquetes se relacionan con todos por lo que no es bueno ya que genera un codigo no mantenible.

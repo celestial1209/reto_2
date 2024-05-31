@@ -1,0 +1,45 @@
+@startuml ejercicio10
+/'Un trabajo de grado especial (TEG) y un trabajo de grado de maestría (TGM) son
+trabajos de investigación. Todo trabajo de investigación es dirigido por uno o a lo sumo
+dos profesores que juegan el rol de tutor. Un mismo profesor puede dirigir varios
+trabajos de investigación. Un TGM siempre se realiza de manera individual, es decir, un
+solo estudiante de postgrado mientras que un TEG puede ser realizado por uno o dos
+estudiantes de pregrado.'/
+
+class TrabajoInvestigacion {
+    - Profesor[] tutores
+    + void agregarTutor(Profesor tutor)
+}
+
+
+class Profesor {
+    - String nombre
+    - String especialidad
+    - TrabajoInvestigacion[] trabajos
+    + void agregarTrabajoDirigido(TrabajoInvestigacion trabajo)
+}
+
+class TEG extends TrabajoInvestigacion {
+    - EstudiantePregrado[] estudiantes
+    +  void agregarEstudiante(EstudiantePregrado estudiante)
+}
+
+class TGM extends TrabajoInvestigacion {
+    - EstudiantePostgrado estudiante 
+    + void setEstudiante(EstudiantePostgrado estudiante: )
+}
+
+
+class EstudiantePregrado {
+    - String nombre
+}
+
+class EstudiantePostgrado {
+    - String nombre
+}
+
+TrabajoInvestigacion *--o "1-2" Profesor : dirigido por 
+TEG *--o "1-2" EstudiantePregrado
+TGM *--o EstudiantePostgrado
+
+@enduml

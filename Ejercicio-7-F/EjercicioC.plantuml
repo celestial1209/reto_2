@@ -1,0 +1,39 @@
+@startuml ejercicioc
+/'Diagrama de clases '/
+class Poligono{}
+
+class Punto{
+    -cord_x: int
+    -cord_y: int 
+}
+
+Poligono <-- Punto
+
+/'Suponga dos triángulos con un lado común. Hacer un diagrama de objetos donde: “un
+punto pertenece a uno o más polígonos”'/
+object T1_Poligono
+Object Punto1{
+    cord_x=0
+    cord_y=0
+}
+Object Punto2{
+    cord_x=10
+    cord_y=10
+}
+Object Punto3{
+    cord_x=10
+    cord_y=0
+}
+
+object T2_Poligono
+Object Punto4{
+    cord_x=5
+    cord_y=10
+}
+T1_Poligono <-- Punto1
+T1_Poligono <-- Punto2
+T1_Poligono <-- Punto3
+T2_Poligono <-- Punto4
+Punto3 <-- T2_Poligono
+
+@enduml

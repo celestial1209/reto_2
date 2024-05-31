@@ -1,0 +1,24 @@
+@startuml ejercicio9
+
+/'La ecuación de FP tiene 2 operandos, el primero es UFC, el segundo es TCF. Los TCF
+dependen de la valoración de 14 subfactores de complejidad técnica (Fi)'/
+class FP {
+
+}
+
+class Operandos {
+}
+
+class UFC extends Operando {
+}
+
+class TCF extends Operando {
+}
+
+class FI {
+    - float valor
+}
+
+FP *--o Operandos: tiene
+TCF  ..> FI: 14
+@enduml

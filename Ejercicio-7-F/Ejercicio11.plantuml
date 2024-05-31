@@ -1,0 +1,30 @@
+@startuml ejercicio11
+/'Suponga que un documento gráfico está compuesto de hojas. Cada hoja contiene un
+objeto dibujo. Un objeto dibujo puede ser: texto, figura 2D, o grupo. Un grupo consta de
+al menos dos objetos dibujo. Un objeto de dibujo puede ser a lo sumo miembro de un
+grupo. Una figura 2D puede ser circulo o cuadrado.'/
+object Documento_Grafico {
+    Hojas[] hojas
+    void insertarHoja(Hojas hoja)
+}
+object Hojas{
+}
+
+object Objeto_dibujo
+
+object Texto 
+object Figura_2D
+object Grupo
+object circulo
+object cuadrado
+
+Documento_Grafico *-- Hojas
+Hojas o-- Objeto_dibujo
+Objeto_dibujo <|-- Texto
+Objeto_dibujo <|-- Figura_2D
+Objeto_dibujo <|-- Grupo
+Grupo "2" o-- "1" Objeto_dibujo
+Figura_2D <|-- circulo : puede ser
+Figura_2D <|-- cuadrado : puede ser
+@enduml
+
